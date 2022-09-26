@@ -6,11 +6,11 @@ const AppRouter = () => {
   const isAuth = false
   return (
     <Routes>
-      {isAuth && authRoutes.map(({ path, Component }) =>
-        <Route key={path} path={path} element={{Component}} exact />
+      {isAuth && authRoutes.map(({ path, element }) =>
+        <Route key={path} path={path} element={element} exact />
       )}
-      {publicRoutes.map(({ path, Component }) =>
-        <Route key={path} path={path} element={Component} exact />
+      {publicRoutes.map(({ path, element }) =>
+        <Route key={path} path={path} element={element} exact />
       )}
     </Routes>
   );

@@ -7,29 +7,29 @@ import { ADMIN_ROUTE, BASKET_ROUTE, DEVICE_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUT
 export const authRoutes = [
   {
     path: ADMIN_ROUTE,
-    Component: Admin
+    element: <Admin />
   },
   {
     path: BASKET_ROUTE,
-    Component: Basket
+    element: <Basket />
   },
 ]
 
 export const publicRoutes = [
   {
     path: SHOP_ROUTE,
-    Component: Shop
+    element: <Shop/>
   },
   {
     path: LOGIN_ROUTE,
-    Component: Basket
+    element: <Basket/>
   },
   {
     path: REGISTRATION_ROUTE,
-    Component: Admin
+    element: <Admin/>
   },
   {
     path: DEVICE_ROUTE + '/:id',
-    Component: DevicePage
+    element: <DevicePage/>
   },
 ]
