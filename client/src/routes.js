@@ -1,4 +1,5 @@
 import Admin from './pages/Admin'
+import Auth from './pages/Auth'
 import Basket from './pages/Basket'
 import Shop from './pages/Shop'
 import DevicePage from './pages/DevicePage'
@@ -22,11 +23,11 @@ export const publicRoutes = [
   },
   {
     path: LOGIN_ROUTE,
-    element: <Basket/>
+    element: <Auth/>
   },
   {
     path: REGISTRATION_ROUTE,
-    element: <Admin/>
+    element: <Auth/>
   },
   {
     path: DEVICE_ROUTE + '/:id',
