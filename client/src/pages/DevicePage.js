@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
 import bigStar from "../assets/bigStar.png";
 
 const DevicePage = () => {
@@ -18,7 +18,9 @@ const DevicePage = () => {
         </Col>
         <Col md={4}>
           <Row className="d-flex flex-column align-items-center">
-            <h2 className="d-flex flex-column align-items-center">{device.name}</h2>
+            <h2 className="d-flex flex-column align-items-center">
+              {device.name}
+            </h2>
             <div
               className="d-flex align-items-center justify-content-center"
               style={{
@@ -33,9 +35,19 @@ const DevicePage = () => {
             </div>
           </Row>
         </Col>
-      </Row>
 
-      <Col md={4}></Col>
+        <Col md={4}>
+          <Card
+          className="d-flex flex-column align-items-center justify-content-around"
+          style={{width: 300, height: 300, fontSize: 32, border: '5px solid lightgray' }}
+          >
+            <h3>От: {device.price} руб.</h3>
+            <Button variant="outline-dark">
+              Добавить в корзину
+            </Button>
+          </Card>
+        </Col>
+      </Row>
     </Container>
   );
 };
