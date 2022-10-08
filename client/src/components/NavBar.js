@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Context } from "../index";
-import { ADMIN_ROUTE, SHOP_ROUTE } from "../utils/consts";
+import { ADMIN_ROUTE, BASKET_ROUTE, SHOP_ROUTE } from "../utils/consts";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -10,7 +10,7 @@ import {observer} from "mobx-react-lite"
 
 const NavBar = observer(() => {
   const { user } = useContext(Context)
-  let navigate = useNavigate()
+  const navigate = useNavigate()
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
