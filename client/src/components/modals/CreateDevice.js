@@ -5,10 +5,14 @@ import { Context } from "../../index";
 
 const CreateDevice = ({ show, onHide }) => {
   const { device } = useContext(Context)
-  const { info, setInfo } = useState([])
+  const [info, setInfo] = useState([])
 
   const addInfo = () => {
-    setInfo([...info, { title: '', description: '', number: Date.now() }])
+    setInfo([...info, { title: "", description: "", number: Date.now() }]);
+  }
+
+  const removeInfo = (number) => {
+    setInfo(info.filter(i => i.number !== number));
   }
 
   return (
@@ -42,36 +46,31 @@ const CreateDevice = ({ show, onHide }) => {
         <Form.Control
           className="mt-3"
           placeholder="Введите стоимость устройства"
-          type='number'
+          type="number"
         />
-        <Form.Control
-          className="mt-3"
-          type='file'
-        />
+        <Form.Control className="mt-3" type="file" />
         <hr />
-        <Button
-          variant={"outline-dark"}
-          onClick={addInfo}
-        >
+        <Button variant={"outline-dark"} onClick={addInfo}>
           Добавить новое свойство
         </Button>
-        {info?.map(i =>
-          <Row>
+        {info.map((i) => (
+          <Row className="mt-4" key={i.number}>
             <Col md={4}>
-              <Form.Control
-                placeholder="Введите название характеристики"
-              />
+              <Form.Control placeholder="Введите название характеристики" />
             </Col>
             <Col md={4}>
-              <Form.Control
-                placeholder="Введите описание характеристики"
-              />
+              <Form.Control placeholder="Введите описание характеристики" />
             </Col>
             <Col md={4}>
-              <Button variant="outline-danger">Удалить</Button>
+              <Button 
+              variant="outline-danger"
+              onClick={() => removeInfo(i.number)}
+              >
+              Удалить
+              </Button>
             </Col>
           </Row>
-          )}
+        ))}
       </Modal.Body>
       <Modal.Footer>
         <Button variant="outline-danger" onClick={onHide}>
