@@ -6,7 +6,7 @@ const CreateBrand = ({show, onHide}) => {
     <Modal show={show} onHide={onHide} centered>
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Добавить бренд
+          Добавить новый бренд
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
