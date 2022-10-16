@@ -4,15 +4,7 @@ export default class DeviceStore {
   constructor(props) {
     this._types = []
     this._brands = []
-    this._devices = [
-      { id: 1, name: 'Iphone 12 pro', price: 25000, rating: 5, img: `https://images.biggeek.ru/1/435/844b/12458-869bigeek_image1.jpeg` },
-      { id: 2, name: 'Iphone 12 pro', price: 25000, rating: 5, img: `https://images.biggeek.ru/1/435/844b/12458-869bigeek_image1.jpeg` },
-      { id: 3, name: 'Iphone 12 pro', price: 25000, rating: 5, img: `https://images.biggeek.ru/1/435/844b/12458-869bigeek_image1.jpeg` },
-      { id: 4, name: 'Iphone 12 pro', price: 25000, rating: 5, img: `https://images.biggeek.ru/1/435/844b/12458-869bigeek_image1.jpeg` },
-      { id: 5, name: 'Iphone 12 pro', price: 25000, rating: 5, img: `https://images.biggeek.ru/1/435/844b/12458-869bigeek_image1.jpeg` },
-      { id: 6, name: 'Iphone 12 pro', price: 25000, rating: 5, img: `https://images.biggeek.ru/1/435/844b/12458-869bigeek_image1.jpeg` },
-      { id: 7, name: 'Iphone 12 pro', price: 25000, rating: 5, img: `https://images.biggeek.ru/1/435/844b/12458-869bigeek_image1.jpeg` },
-    ]
+    this._devices = []
     this._selectedType = {}
     this._selectedBrand = {}
     makeAutoObservable(this)
