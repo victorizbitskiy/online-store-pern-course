@@ -7,6 +7,7 @@ import BrandBar from '../components/BrandBar';
 import DeviceList from '../components/DeviceList';
 import TypeBar from '../components/TypeBar';
 import { fetchBrands, fetchDevices, fetchTypes } from '../http/deviceAPI';
+import Pages from '../components/Pages';
 
 const Shop = observer(() => {
   const { device } = useContext(Context)
@@ -14,7 +15,10 @@ const Shop = observer(() => {
   useEffect(() => {
     fetchTypes().then(data => device.setTypes(data))
     fetchBrands().then(data => device.setBrands(data))
-    fetchDevices().then(data => device.setDevices(data.rows))
+    fetchDevices().then(data => {
+      device.setDevices(data.rows)
+      device.setTotalCount(data.count)
+    })
   }, [])
 
   return (
@@ -26,6 +30,7 @@ const Shop = observer(() => {
         <Col md={9}>
           <BrandBar />
           <DeviceList />
+          <Pages />
         </Col>
       </Row>
     </Container>
